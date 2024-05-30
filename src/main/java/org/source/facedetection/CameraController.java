@@ -1,8 +1,13 @@
 package org.source.facedetection;
+import java.io.IOException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 import org.opencv.core.Mat;
 import org.opencv.core.MatOfRect;
 import org.opencv.core.Rect;
@@ -20,27 +25,24 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-public class FaceDetectionController {
+public class CameraController extends Detector {
+
     @FXML
     private Button cameraButton;
     @FXML
     private ImageView originalFrame;
-    @FXML
-    private CheckBox haarClassifier;
-    @FXML
-    private CheckBox lbpClassifier;
     private ScheduledExecutorService timer;
     private VideoCapture capture;
     private boolean cameraActive;
-    private CascadeClassifier faceCascade;
-    private int absoluteFaceSize;
+    private String haarSource = "src/main/resources/org/source/facedetection/haarcascades/haarcascade_frontalface_alt.xml";
+    private String lbpSource = "src/main/resources/org/source/facedetection/lbpcascades/lbpcascade_frontalface_improved.xml";
+
     protected void init()
     {
         this.capture = new VideoCapture();
-        this.faceCascade = new CascadeClassifier();
-        this.absoluteFaceSize = 0;
         originalFrame.setFitWidth(800);
         originalFrame.setPreserveRatio(true);
+        this.cameraButton.setDisable(false);
     }
 
     @FXML
@@ -48,21 +50,19 @@ public class FaceDetectionController {
     {
         if (!this.cameraActive)
         {
-            this.haarClassifier.setDisable(true);
-            this.lbpClassifier.setDisable(true);
-
             this.capture.open(0);
 
             if (this.capture.isOpened())
             {
                 this.cameraActive = true;
-
+//                System.out.println("bat cam");
                 // 30fps
                 Runnable frameGrabber = new Runnable() {
 
                     @Override
                     public void run()
                     {
+//                        System.out.println("grab frame");
                         Mat frame = grabFrame();
                         Image imageToShow = Utils.mat2Image(frame);
                         updateImageView(originalFrame, imageToShow);
@@ -70,7 +70,7 @@ public class FaceDetectionController {
                 };
 
                 this.timer = Executors.newSingleThreadScheduledExecutor();
-                this.timer.scheduleAtFixedRate(frameGrabber, 0, 33, TimeUnit.MILLISECONDS);
+                this.timer.scheduleAtFixedRate(frameGrabber, 0, 16, TimeUnit.MILLISECONDS);
 
                 // update the button content
                 this.cameraButton.setText("Stop Camera");
@@ -86,27 +86,23 @@ public class FaceDetectionController {
             this.cameraActive = false;
             this.cameraButton.setText("Start Camera");
 
-            this.haarClassifier.setDisable(false);
-            this.lbpClassifier.setDisable(false);
-
             this.stopAcquisition();
             updateImageView(originalFrame, null);
-
         }
     }
     private Mat grabFrame()
     {
         Mat frame = new Mat();
-
+        this.faceCascade = new CascadeClassifier(lbpSource);
+//        System.out.println("chon thu vien");
         if (this.capture.isOpened())
         {
             try
             {
                 this.capture.read(frame);
-
                 if (!frame.empty())
                 {
-                    this.detectAndDisplay(frame);
+                    super.detectAndDisplay(frame);
                 }
 
             }
@@ -117,60 +113,6 @@ public class FaceDetectionController {
         }
 
         return frame;
-    }
-
-    private void detectAndDisplay(Mat frame)
-    {
-        MatOfRect faces = new MatOfRect();
-        Mat grayFrame = new Mat();
-
-        Imgproc.cvtColor(frame, grayFrame, Imgproc.COLOR_BGR2GRAY);
-        Imgproc.equalizeHist(grayFrame, grayFrame);
-
-        if (this.absoluteFaceSize == 0)
-        {
-            int height = grayFrame.rows();
-            if (Math.round(height * 0.2f) > 0)
-            {
-                this.absoluteFaceSize = Math.round(height * 0.2f);
-            }
-        }
-
-        // detect faces
-        this.faceCascade.detectMultiScale(grayFrame, faces, 1.1, 2, 0 | Objdetect.CASCADE_SCALE_IMAGE,
-                new Size(this.absoluteFaceSize, this.absoluteFaceSize), new Size());
-
-        Rect[] facesArray = faces.toArray();
-        for (int i = 0; i < facesArray.length; i++)
-            Imgproc.rectangle(frame, facesArray[i].tl(), facesArray[i].br(), new Scalar(0, 255, 0), 3);
-
-    }
-    @FXML
-    protected void haarSelected(Event event)
-    {
-        // check whether the lpb checkbox is selected and deselect it
-        if (this.lbpClassifier.isSelected())
-            this.lbpClassifier.setSelected(false);
-
-        this.checkboxSelection("src/main/resources/org/source/facedetection/haarcascades/haarcascade_frontalface_alt.xml");
-    }
-    @FXML
-    protected void lbpSelected(Event event)
-    {
-        // check whether the haar checkbox is selected and deselect it
-        if (this.haarClassifier.isSelected())
-            this.haarClassifier.setSelected(false);
-
-        this.checkboxSelection("src/main/resources/org/source/facedetection/lbpcascades/lbpcascade_frontalface_improved.xml");
-    }
-
-    private void checkboxSelection(String classifierPath)
-    {
-        // load the classifier(s)
-        this.faceCascade.load(classifierPath);
-
-        // now the video capture can start
-        this.cameraButton.setDisable(false);
     }
     private void stopAcquisition()
     {
@@ -202,5 +144,30 @@ public class FaceDetectionController {
     protected void setClosed()
     {
         this.stopAcquisition();
+    }
+
+    @FXML
+    private Button chooseImage;
+    private Stage stage;
+
+    public void setStage(Stage stage) {
+        this.stage = stage;
+    }
+    @FXML
+    private void changeScene1(){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ChooseImage.fxml"));
+            Parent root = loader.load();
+
+            // Lấy controller của scene2
+            ChooseImageController chooseImageController = loader.getController();
+            chooseImageController.setStage(stage);
+
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
