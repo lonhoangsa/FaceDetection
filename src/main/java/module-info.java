@@ -10,6 +10,9 @@ module org.source.facedetection {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires opencv;
+    requires java.desktop;
+    requires javafx.swing;
 
     opens org.source.facedetection to javafx.fxml;
     exports org.source.facedetection;

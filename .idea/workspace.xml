@@ -5,13 +5,47 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="98ad6339-83c5-4689-aa08-00b3213b3a0c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/source/facedetection/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/source/facedetection/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/source/facedetection/FaceDetectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/source/facedetection/FaceDetectionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/source/facedetection/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/source/facedetection/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/source/facedetection/haarcascades/haarcascade_eye.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/source/facedetection/haarcascades/haarcascade_eye_tree_eyeglasses.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/source/facedetection/haarcascades/haarcascade_frontalcatface.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/source/facedetection/haarcascades/haarcascade_frontalcatface_extended.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/source/facedetection/haarcascades/haarcascade_frontalface_alt.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/source/facedetection/haarcascades/haarcascade_frontalface_alt2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/source/facedetection/haarcascades/haarcascade_frontalface_alt_tree.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/source/facedetection/haarcascades/haarcascade_frontalface_default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/source/facedetection/haarcascades/haarcascade_fullbody.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/source/facedetection/haarcascades/haarcascade_lefteye_2splits.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/source/facedetection/haarcascades/haarcascade_license_plate_rus_16stages.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/source/facedetection/haarcascades/haarcascade_lowerbody.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/source/facedetection/haarcascades/haarcascade_profileface.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/source/facedetection/haarcascades/haarcascade_righteye_2splits.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/source/facedetection/haarcascades/haarcascade_russian_plate_number.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/source/facedetection/haarcascades/haarcascade_smile.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/source/facedetection/haarcascades/haarcascade_upperbody.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/source/facedetection/lbpcascades/lbpcascade_frontalcatface.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/source/facedetection/lbpcascades/lbpcascade_frontalface.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/source/facedetection/lbpcascades/lbpcascade_frontalface_improved.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/source/facedetection/lbpcascades/lbpcascade_profileface.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/source/facedetection/lbpcascades/lbpcascade_silverware.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/source/facedetection/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/source/facedetection/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -23,25 +57,48 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2gg8GfEQ1xRERilzk0GIffp5Qbw" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Application.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/hoang/OneDrive/Desktop/k0d3/OOP/FaceDetection/src/main/java/library/x64/opencv_java490.dll&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\hoang\OneDrive\Desktop\k0d3\OOP\FaceDetection\src\main\resources\org\source\facedetection" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\hoang\OneDrive\Desktop\k0d3\OOP\FaceDetection\src\main\resources\org\source\facedetection\lbpcascades" />
+      <recent name="C:\Users\hoang\OneDrive\Desktop\k0d3\OOP\FaceDetection\src\main\resources\org\source\facedetection\haarcascades" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.source.facedetection" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -57,7 +114,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716107766090</updated>
-      <workItem from="1716107767159" duration="1000" />
+      <workItem from="1716107767159" duration="7880000" />
+      <workItem from="1716261060795" duration="521000" />
+      <workItem from="1716443177629" duration="107000" />
+      <workItem from="1716869410322" duration="54000" />
+      <workItem from="1716892832838" duration="11000" />
+      <workItem from="1716898324050" duration="37000" />
+      <workItem from="1716900447717" duration="26000" />
+      <workItem from="1716900728109" duration="18000" />
+      <workItem from="1716901778645" duration="25000" />
+      <workItem from="1717052569400" duration="438000" />
     </task>
     <servers />
   </component>
